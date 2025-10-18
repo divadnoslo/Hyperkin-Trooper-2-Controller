@@ -12,6 +12,7 @@ if __name__ == "__main__":
     while True:
         events = gp.read()
         for event in events:
+            # print(f"Full event:\n\ttype: {event.ev_type}, code: {event.code}, state: {event.state}")
             if event.ev_type == "Absolute":
                 if event.state == 127:
                     print("Joystick: HOME")
@@ -35,6 +36,10 @@ if __name__ == "__main__":
                         print(f"SELECT Button Pressed")
                     elif event.code == "BTN_PINKIE":
                         print(f"START Button Pressed")
+                    elif event.code == "BTN_THUMB2":
+                        print(f"Left Trigger Button Pressed")
+                    elif event.code == "BTN_TOP":
+                        print(f"Right Trigger Button Pressed")
 
                 
                 
